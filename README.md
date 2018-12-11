@@ -1,5 +1,5 @@
 # DSA Notes
-My notes from Ray Wenderlich's Data Structures and Algorithms book
+My notes from Ray Wenderlich's Data Structures and Algorithms book using Swift.
 
 ## Table of Contents
 
@@ -11,10 +11,23 @@ My notes from Ray Wenderlich's Data Structures and Algorithms book
   * [Quasilinear Time](#quasilinear-time)
   * [Other Time Complexities](#other-time-complexities)
 * [Space Complexity](#space-complexity)
-
+* [Basic Data Structures](#basic-data-structures)
+  * [Linked Lists](#linked-lists)
+  * [Stacks](#stacks)
+  * [Queues](#queues)
+* [Trees](#trees)
+  * [Basic Trees](#basic-tree)
+  * [Binary Trees](#binary-trees)
+  * [Binary Search Trees](#binary-search-tress)
+  * [AVL Trees](#avl-trees)
+  * [Tries](#tries)
+  * [Binary Search](#binary-search)
+  * [Heaps](#heaps)
+  * [Priority Queues](#priority-queues)
+  
 ## Time Complexity
 
-Time complexity is a measure of the time required to run an algorithm as the number of inputs increase. It only gives a high-level ranking of the performance, so loops that happen a set number of times or other setup code is not part of the basic calculation. This means that two algorithms can have the same time complexity, but one might be a lot faster due to supporting code or functions. All constants are dropped in the final notation. Some algorithms use each element (linear, quadratic), but some only need to use a portion of the elements which lead to a faster runtime (logarithmic). 
+Time complexity is a measure of the time required to run an algorithm as the number of inputs increase. It only gives a high-level ranking of the performance, so loops that happen a set number of times or other setup code is not part of the basic calculation. This means that two algorithms can have the same time complexity, but one might be a lot faster due to supporting code or functions. All constants are dropped in the final notation. Time complexity can help predict scalability. Some algorithms use each element (linear, quadratic), but some only need to use a portion of the elements which lead to a faster runtime (logarithmic). 
 
 ### Constant Time
 
@@ -102,13 +115,55 @@ func naiveContains(_ value: Int, in array: [Int]) -> Bool {
 
 ### Quasilinear time
 
-These perform worse than linear, but alot better than quadratic. The big O notation is O(n log n).
+These perform worse than linear, but a lot better than quadratic. The big O notation is O(n log n).
 
 ### Other Time Complexities
 
 Other time complexities exist such as polynomial, exponential, and factorial. The previous 5 are usually the most common. 
 
 ## Space Complexity
+
+Space complexity is a measure of the resources required for an algorithm to run. Memory is a major factor in computing, so managing memory during computations is also important for predicting scalability.
+
+## Basic Data Structures
+
+These form the basis of more advanced algorithms. 
+
+### Linked Lists
+
+A linked list is a collection of values stored in a linear unidirectional sequence. It's basically a chain of nodes, and each node holds a value and a reference to the next node. A nil value for a reference means that it's the end of the list. 
+
+**Example:**
+
+```swift
+  // TODO
+```
+
+### Stacks
+
+A stack data structure is conceptually a stack of objects, like a deck of cards. They use LIFO (last-in first-out) ordering. When you add (push) an item, it goes on the top. When you remove (pop) an item, it always removes the top-most item.
+
+**Example:**
+
+```swift
+  // TODO
+```
+
+### Queues
+
+A queue is a linear structure of elements that are waiting to be processed. It uses FIFO (first-in first-out) ordering. Queues are used when you need to maintain the order of your elements so you can process them later. When you add an element (enqueue), it gets added onto the back of the queue. When you remove an element, it removes the element from the front of the queue. You can also check what's at the front/back of the queue (peek).
+
+**Example:**
+
+```swift
+  // TODO
+```
+
+
+
+
+
+
 
 
 
