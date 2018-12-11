@@ -8,10 +8,13 @@ My notes from Ray Wenderlich's Data Structures and Algorithms book
   * [Linear Time](#linear-time)
   * [Quadratic Time](#quadratic-time)
   * [Logarithmic Time](#logarithmic-time)
+  * [Quasilinear Time](#quasilinear-time)
+  * [Other Time Complexities](#other-time-complexities)
+* [Space Complexity](#space-complexity)
 
 ## Time Complexity
 
-Time complexity is a measure of the time required to run an algorithm as the number of inputs increase. It only gives a high-level overview of the performance, so loops that happen a set number of times or other setup code is not part of the basic calculation. All constants are dropped in the final notation. Some algorithms use each element (linear, quadratic), but some only need to use a subset of elements which lead to a faster runtime (logarithmic,
+Time complexity is a measure of the time required to run an algorithm as the number of inputs increase. It only gives a high-level ranking of the performance, so loops that happen a set number of times or other setup code is not part of the basic calculation. This means that two algorithms can have the same time complexity, but one might be a lot faster due to supporting code or functions. All constants are dropped in the final notation. Some algorithms use each element (linear, quadratic), but some only need to use a portion of the elements which lead to a faster runtime (logarithmic). 
 
 ### Constant Time
 
@@ -62,15 +65,13 @@ func printAllNames(names: [String]) {
         print(name)
       }
     }
+    
 }
 ```
 
-
-
-
 ### Logarithmic Time
 
-An algorithm where as the size of the inputs increase, the time it takes to execute increases at a slow rate. This could be done by reducing the amount of comparisons you need to do (like halving the data in a Binary search). The Big O notation is O(log n).
+An algorithm where as the size of the inputs increase, the time it takes to execute barely increases. This could be done by reducing the amount of executions you need to do (like halving the data  in a Binary search). The Big O notation is O(log n).
 
 **Example:**
 
@@ -78,29 +79,36 @@ The function only checks half of the array to come up with the answer. It checks
 
 ```swift
 func naiveContains(_ value: Int, in array: [Int]) -> Bool {
- guard !array.isEmpty else { return false }
- let middleIndex = array.count / 2
+    guard !array.isEmpty else { return false }
+    let middleIndex = array.count / 2
  
- if value <= array[middleIndex] {
-  for index in 0...middleIndex {
-   if array[index] == value {
-    return true
-   }
-  }
- } else {
-  for index in middleIndex..<array.count {
-   if array[index] == value {
-   return true
-   }
-  }
- }
+    if value <= array[middleIndex] {
+      for index in 0...middleIndex {
+        if array[index] == value {
+          return true
+        }
+      }
+    } else {
+      for index in middleIndex..<array.count {
+        if array[index] == value {
+          return true
+        }
+      }
+    }
  
- return false
+    return false
 }
 ```
 
+### Quasilinear time
 
+These perform worse than linear, but alot better than quadratic. The big O notation is O(n log n).
 
+### Other Time Complexities
+
+Other time complexities exist such as polynomial, exponential, and factorial. The previous 5 are usually the most common. 
+
+## Space Complexity
 
 
 
