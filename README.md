@@ -29,6 +29,10 @@ My notes from Ray Wenderlich's Data Structures and Algorithms book using Swift.
 
 Time complexity is a measure of the time required to run an algorithm as the number of inputs increase. It only gives a high-level ranking of the performance, so loops that happen a set number of times or other setup code is not part of the basic calculation. This means that two algorithms can have the same time complexity, but one might be a lot faster due to supporting code or functions. All constants are dropped in the final notation. Time complexity can help predict scalability. Some algorithms use each element (linear, quadratic), but some only need to use a portion of the elements which lead to a faster runtime (logarithmic). 
 
+Below is a chart from [Big O Cheatsheet](http//bigocheatsheet.com) so you can see the differences between a few time complexities.
+
+![Big O Complexity Chart](https://github.com/DennisOrszulak/DSA-Notes/tree/master/DSA%20Notes%20Images)
+
 ### Constant Time
 
 An algorithm that has the same running time regardless of the size of the input. The Big O notation is O(1).
