@@ -135,7 +135,7 @@ These form the basis of more advanced algorithms.
 
 ### Linked Lists
 
-A linked list is a collection of values stored in a linear unidirectional sequence. It's basically a chain of nodes, and each node holds a value and a reference to the next node. The head of the list is the first element and the tail is the last element. A nil reference means that it's the end of the list. 
+A linked list is a collection of values stored in a linear unidirectional sequence. It's basically a chain of nodes, and each node holds a value and a reference to the next node. The head of the list is the first element and the tail is the last element. A nil reference means that it's the end of the list. A doubly linked list means that there are references to the next node and also the previous node, so you can have bidirectional movement.
 
 ![Linked List](/DSA%20Notes%20Images/Linked%20List.png)
 
@@ -147,7 +147,7 @@ A linked list is a collection of values stored in a linear unidirectional sequen
 
 ### Stacks
 
-A stack data structure is conceptually a stack of objects, like a deck of cards. They use LIFO (last-in first-out) ordering. When you add (push) an item, it goes on the top. When you remove (pop) an item, it always removes the top-most item.
+A stack data structure is conceptually a stack of objects, like a deck of cards. They use LIFO (last-in first-out) ordering. When you add (push) an item, it goes on the top. When you remove (pop) an item, it always removes the top-most item. Simple recursion implicitly uses a stack.
 
 **Example:**
 
@@ -157,7 +157,7 @@ A stack data structure is conceptually a stack of objects, like a deck of cards.
 
 ### Queues
 
-A queue is a linear structure of elements that are waiting to be processed. It uses FIFO (first-in first-out) ordering. Queues are used when you need to maintain the order of your elements so you can process them later. When you add an element (enqueue), it gets added onto the back of the queue. When you remove an element, it removes the element from the front of the queue. You can also check what's at the front/back of the queue (peek).
+A queue is a linear structure of elements that are waiting to be processed. It uses FIFO (first-in first-out) ordering. Queues are used when you need to maintain the order of your elements so you can process them later. When you add an element (enqueue), it gets added onto the back of the queue. When you remove an element, it removes the element from the front of the queue. You can also check what's at the front/back of the queue (peek). 
 
 ![Queue](/DSA%20Notes%20Images/Queue.png)
 
@@ -167,10 +167,36 @@ A queue is a linear structure of elements that are waiting to be processed. It u
   // TODO
 ```
 
+## Trees
 
+A tree is a data structure that simulates a hierarchal structure (like a tree with a root, some branches, and leaves). It’s made out of a collection of nodes that save some data to keep track of its children nodes. The top-most node (the only node that has no parent node) is called the root and it’s the start of the tree. A node that has no children is a leaf. There are different type of trees that have their own unique rules.
 
+**Iterating Through Trees**
 
+There are tons of different ways to traverse a tree, but that depends on the type of tree. The two basic ways to traverse a tree data structure are depth-first and breadth-first.
 
+- Depth-first: Starts at the root, and visits nodes as deep as it can before backtracking. 
+- Breadth-first/level-order: Visits each node of the tree based on the depth or level. The root would be considered level 0, then the root’s children nodes would be level 1, and so on…
+
+### Binary Trees
+
+A type of tree where each node can only have a max of two children, and they are referred to as the left and right children.
+
+**Traversal**
+
+- In-order: Start from the root node, visit all the nodes in the left subtree, then the root node, then visit all the nodes in the right subtree. It basically goes all the way down to the lower-left-most node, and works it way to the left. This algorithm can find the nodes in ascending order if the nodes are inserted and structured in a certain way.
+
+![Traversal](/DSA%20Notes%20Images/In-order%20Binary%20Tree%20Traversal.png)
+
+- Pre-order: Visit the root node, then visit all the nodes in the left subtree, then visit all the nodes in the right subtree.
+
+![Traversal](/DSA%20Notes%20Images/Post-order%20Binary%20Tree%20Traversal.png)
+
+- Post-order: Only visit the current node after the left and right children have been visited. The root node is always visited last. 
+
+![Traversal](/DSA%20Notes%20Images/Pre-order%20Binary%20Tree%20Traversal.png)
+
+### Binary Search Trees
 
 
 
