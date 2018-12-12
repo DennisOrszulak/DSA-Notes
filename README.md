@@ -29,9 +29,9 @@ My notes from Ray Wenderlich's Data Structures and Algorithms book using Swift.
 
 Time complexity is a measure of the time required to run an algorithm as the number of inputs increase. It only gives a high-level ranking of the performance, so loops that happen a set number of times or other setup code is not part of the basic calculation. This means that two algorithms can have the same time complexity, but one might be a lot faster due to supporting code or functions. All constants are dropped in the final notation. Time complexity can help predict scalability. Some algorithms use each element (linear, quadratic), but some only need to use a portion of the elements which lead to a faster runtime (logarithmic). 
 
-Below is a chart from [Big O Cheatsheet](http//bigocheatsheet.com) so you can see the differences between a few time complexities.
+Below is a chart from [Big O Cheatsheet](http://bigocheatsheet.com/) so you can see the differences between a few time complexities.
 
-![Big O Complexity Chart](https://github.com/DennisOrszulak/DSA-Notes/tree/master/DSA%20Notes%20Images)
+![Big O Complexity Chart](/DSA%20Notes%20Images/Big%20O%20Complexity%20Chart.png)
 
 ### Constant Time
 
@@ -135,7 +135,9 @@ These form the basis of more advanced algorithms.
 
 ### Linked Lists
 
-A linked list is a collection of values stored in a linear unidirectional sequence. It's basically a chain of nodes, and each node holds a value and a reference to the next node. A nil value for a reference means that it's the end of the list. 
+A linked list is a collection of values stored in a linear unidirectional sequence. It's basically a chain of nodes, and each node holds a value and a reference to the next node. The head of the list is the first element and the tail is the last element. A nil reference means that it's the end of the list. 
+
+![Linked List](/DSA%20Notes%20Images/Linked%20List.png)
 
 **Example:**
 
@@ -156,6 +158,8 @@ A stack data structure is conceptually a stack of objects, like a deck of cards.
 ### Queues
 
 A queue is a linear structure of elements that are waiting to be processed. It uses FIFO (first-in first-out) ordering. Queues are used when you need to maintain the order of your elements so you can process them later. When you add an element (enqueue), it gets added onto the back of the queue. When you remove an element, it removes the element from the front of the queue. You can also check what's at the front/back of the queue (peek).
+
+![Queue](/DSA%20Notes%20Images/Queue.png)
 
 **Example:**
 
