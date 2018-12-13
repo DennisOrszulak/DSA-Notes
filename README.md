@@ -16,9 +16,8 @@ My notes from Ray Wenderlich's Data Structures and Algorithms book using Swift.
   * [Stacks](#stacks)
   * [Queues](#queues)
 * [Trees](#trees)
-  * [Basic Trees](#basic-tree)
   * [Binary Trees](#binary-trees)
-  * [Binary Search Trees](#binary-search-tress)
+  * [Binary Search Trees](#binary-search-trees)
   * [AVL Trees](#avl-trees)
   * [Tries](#tries)
   * [Binary Search](#binary-search)
@@ -41,6 +40,8 @@ Time complexity is a measure of the time required to run an algorithm as the num
 Below is a chart from [Big O Cheatsheet](http://bigocheatsheet.com/) so you can see the differences between a few time complexities.
 
 ![Big O Complexity Chart](/DSA%20Notes%20Images/Big%20O%20Complexity%20Chart.png)
+
+
 
 ### Constant Time
 
@@ -146,7 +147,7 @@ These form the basis of more advanced algorithms.
 
 A linked list is a collection of values stored in a linear unidirectional sequence. It's basically a chain of nodes, and each node holds a value and a reference to the next node. The head of the list is the first element and the tail is the last element. A nil reference means that it's the end of the list. A doubly linked list means that there are references to the next node and also the previous node, so you can have bidirectional movement.
 
-![Linked List](/DSA%20Notes%20Images/Linked%20List.png)
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Linked%20List.png" width="400" height="250">
 
 **Example:**
 
@@ -168,7 +169,7 @@ A stack data structure is conceptually a stack of objects, like a deck of cards.
 
 A queue is a linear structure of elements that are waiting to be processed. It uses FIFO (first-in first-out) ordering. Queues are used when you need to maintain the order of your elements so you can process them later. When you add an element (enqueue), it gets added onto the back of the queue. When you remove an element, it removes the element from the front of the queue. You can also check what's at the front/back of the queue (peek). 
 
-![Queue](/DSA%20Notes%20Images/Queue.png)
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Queue.png" width="400" height="250">
 
 **Example:**
 
@@ -191,21 +192,21 @@ There are tons of different ways to traverse a tree, but that depends on the typ
 
 A type of tree where each node can only have a max of two children, and they are referred to as the left and right children. Considerably unbalanced trees affect performance, so try to keep the trees balanced on each side, The picture below is a simple example of an unbalanced vs. balanced tree.
 
-![Unbalanced Tree](/DSA%20Notes%20Images/Unbalanced%20Tree%20Example.png)
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Unbalanced%20Tree%20Example.png" width="450" height="250">
 
 **Traversal**
 
 - In-order: Start from the root node, visit all the nodes in the left subtree, then the root node, then visit all the nodes in the right subtree. It basically goes all the way down to the lower-left-most node, and works it way to the left. This algorithm can find the nodes in ascending order if the nodes are inserted and structured in a certain way.
 
-![Traversal](/DSA%20Notes%20Images/In-order%20Binary%20Tree%20Traversal.png)
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/In-order%20Binary%20Tree%20Traversal.png" width="300" height="250">
 
 - Pre-order: Visit the root node, then visit all the nodes in the left subtree, then visit all the nodes in the right subtree.
 
-![Traversal](/DSA%20Notes%20Images/Pre-order%20Binary%20Tree%20Traversal.png)
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Pre-order%20Binary%20Tree%20Traversal.png" width="300" height="250">
 
 - Post-order: Only visit the current node after the left and right children have been visited. The root node is always visited last. 
 
-![Traversal](/DSA%20Notes%20Images/Post-order%20Binary%20Tree%20Traversal.png)
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Post-order%20Binary%20Tree%20Traversal.png" width="300" height="250">
 
 ### Binary Search Trees
 
@@ -215,21 +216,21 @@ A BST is a data structure that helps with fast lookup, insert, and removal opera
 
 Since the trees are already sorted based on the two rules, it’s faster than an unsorted array. In an unsorted array, you’d have to check every element, whereas a BST can cut the search space in half each time. The following picture is an example of a BST lookup conceptually. 
 
-![BST](/DSA%20Notes%20Images/BST%20Lookup%20Example.png)
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/BST%20Lookup%20Example.png" width="300" height="250">
 
 **Insertion**
 
 Inserting values are very easy with binary search trees. Since the tree is already sorted, you don’t have to move any previous values from their locations (like inserting a number into the beginning of an array where you have to shift everything over 1 spot). Just keep traversing through the tree based on the rules until you hit a leaf node, and insert the value on the left (if the value’s smaller than the leaf node) or on the right (if the value’s larger than the leaf node). The picture below is an example of an insertion conceptually. 
 
-![BST](/DSA%20Notes%20Images/BST%20Insert%20Example.png)
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/BST%20Insert%20Example.png" width="300" height="250">
 
 **Removal**
 
 Removals can be trickier to implement. If the node you’re removing is a leaf node, just remove that node. If the node you’re removing only has 1 child, just reconnect the child node to the rest of the tree (which should be the parent node of the node that you removed). If the node has 2 children, you’ll have to perform a node swap. Replace the removed node with the smallest node (leftmost) in its right subtree. For example in the following pictures, if you want to remove the value 25, replace it with 27. The removed node’s parent (50) only has space for 1 more child, so you can’t connect 12 and 37 back to the root or you’d break the BST rules and break the tree. If you move the smallest node in the removed node’s subtree (27), the tree will still follow the rules. Make sure to delete 27 from the original spot so it’s not duplicated in the tree.
 
-![BST](/DSA%20Notes%20Images/BST%20Remove%20Value%20Example.png)
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/BST%20Remove%20Value%20Example.png" width="300" height="250">
 
-![BST](/DSA%20Notes%20Images/BST%20Remove%20Value%20Swap.png)
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/BST%20Remove%20Value%20Swap.png" width="300" height="250">
 
 ### AVL Trees
 
@@ -249,7 +250,7 @@ Removals can be trickier to implement. If the node you’re removing is a leaf n
 
 ### Insertion Sort
 
-### Generaliztion
+### Generalization
 
 ### Merge Sort
 
