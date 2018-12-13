@@ -222,7 +222,15 @@ Removals can be trickier to implement. If the node you’re removing is a leaf n
 
 ![BST](/DSA%20Notes%20Images/BST%20Remove%20Value%20Swap.png)
 
+### AVL Trees
 
+### Tries
+
+### Binary Search
+
+### Heaps
+
+### Priority Queues
 
 
 
