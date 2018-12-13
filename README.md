@@ -24,7 +24,16 @@ My notes from Ray Wenderlich's Data Structures and Algorithms book using Swift.
   * [Binary Search](#binary-search)
   * [Heaps](#heaps)
   * [Priority Queues](#priority-queues)
-  
+* [Sorting Algorithms](#sorting-algorithms)
+  * [Bubble Sort](#bubble-sort)
+  * [Selection Sort](#selection-sort)
+  * [Insertion Sort](#insertion-sort)
+  * [Generalization](#generalization)
+  * [Merge Sort](#merge-sort)
+  * [Radix Sort](#radix-sort)
+  * [Heap Sort](#heap-sort)
+  * [Quick Sort](#quick-sort)
+
 ## Time Complexity
 
 Time complexity is a measure of the time required to run an algorithm as the number of inputs increase. It only gives a high-level ranking of the performance, so loops that happen a set number of times or other setup code is not part of the basic calculation. This means that two algorithms can have the same time complexity, but one might be a lot faster due to supporting code or functions. All constants are dropped in the final notation. Time complexity can help predict scalability. Some algorithms use each element (linear, quadratic), but some only need to use a portion of the elements which lead to a faster runtime (logarithmic). 
@@ -232,9 +241,23 @@ Removals can be trickier to implement. If the node you’re removing is a leaf n
 
 ### Priority Queues
 
+## Sorting Algorithms
 
+### Bubble Sort
 
+### Selection Sort
 
+### Insertion Sort
+
+### Generaliztion
+
+### Merge Sort
+
+### Radix Sort
+
+### Heap Sort
+
+### Quick Sort
 
 
 
