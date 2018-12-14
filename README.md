@@ -179,7 +179,7 @@ A queue is a linear structure of elements that are waiting to be processed. It u
 
 ## Trees
 
-A tree is a data structure that simulates a hierarchal structure (like a tree with a root, some branches, and leaves). It’s made out of a collection of nodes that save some data to keep track of its children nodes. The top-most node (the only node that has no parent node) is called the root and it’s the start of the tree. A node that has no children is a leaf. There are different type of trees that have their own unique rules. 
+A tree is a data structure that simulates a hierarchal structure (like a tree with a root, some branches, and leaves). It’s made out of a collection of nodes that save some data to keep track of its children nodes. The top-most node (the only node that has no parent node) is called the root and it’s the start of the tree. A node that has no children is a leaf. There are different type of trees that have their own unique rules. A tree can be perfectly balanced (every level of the tree is symmetrical and filled with nodes, but this is rare), balanced (every level is filled except for the bottom level), and unbalanced (multiple levels are not symmetric).
 
 **Iterating Through Trees**
 
@@ -233,6 +233,27 @@ Removals can be trickier to implement. If the node you’re removing is a leaf n
 <img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/BST%20Remove%20Value%20Swap.png" width="300" height="250">
 
 ### AVL Trees
+
+Georgy Adelson-Velsky and Evgenii Landis came up with the first self-balancing binary search tree called the AVL Tree. 
+
+**Measuring Balance**
+
+The AVL tree measures the balance of the whole tree by applying a height property to each node. The height of a node is the longest distance from the current node to a leaf node. The balance factor is calculated with the height difference of the left and right child. If a child is nil, the height is considered to be -1. A balanced tree should have a balance factor of 1. Below is an example of a balanced tree that shows the height and balance factor.
+
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/AVL%20Balance%20And%20Height%20Example.png" width="400" height="250">
+
+Now if you insert 40 (which gets placed as the right child of 37), the tree becomes unbalanced. The balance factor changes to 2 (2 or -2 means it’s unbalanced). Even if more than one node might have a bad balancing factor, you only need to perform the balancing proceed on the bottom-most node containing the bad balance factor. So the node containing 25 will need to be fixed. 
+
+**Rotations**
+
+Rotations are used to balance a binary search tree. There are four different types of rotations (left, left-right, right, right-left), one for each way a tree can become unbalanced.
+
+**Left Rotation**
+
+The problem caused by inserting 40 can be fixed using a left rotation. This causes in-order traversal for the nodes to remain the same, and the depth of the tree is reduced by one level. A left rotation example is pictured below. 
+
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/AVL%20Left%20Rotation%20Concept.png" width="350" height="250">
+
 
 ### Tries
 
