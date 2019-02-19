@@ -1,5 +1,5 @@
 # DSA Notes
-My notes from Ray Wenderlich's Data Structures and Algorithms book using Swift.
+My notes from Ray Wenderlich's Data Structures and Algorithms book.
 
 ## Table of Contents
 
@@ -40,8 +40,6 @@ Time complexity is a measure of the time required to run an algorithm as the num
 Below is a chart from [Big O Cheatsheet](http://bigocheatsheet.com/) so you can see the differences between a few time complexities.
 
 ![Big O Complexity Chart](/DSA%20Notes%20Images/Big%20O%20Complexity%20Chart.png)
-
-
 
 ### Constant Time
 
@@ -149,33 +147,16 @@ A linked list is a collection of values stored in a linear unidirectional sequen
 
 <img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Linked%20List.png" width="400" height="250">
 
-**Example:**
-
-```swift
-  // TODO
-```
 
 ### Stacks
 
 A stack data structure is conceptually a stack of objects, like a deck of cards. They use LIFO (last-in first-out) ordering. When you add (push) an item, it goes on the top. When you remove (pop) an item, it always removes the top-most item. Simple recursion implicitly uses a stack.
-
-**Example:**
-
-```swift
-  // TODO
-```
 
 ### Queues
 
 A queue is a linear structure of elements that are waiting to be processed. It uses FIFO (first-in first-out) ordering. Queues are used when you need to maintain the order of your elements so you can process them later. When you add an element (enqueue), it gets added onto the back of the queue. When you remove an element, it removes the element from the front of the queue. You can also check what's at the front/back of the queue (peek). 
 
 <img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Queue.png" width="400" height="250">
-
-**Example:**
-
-```swift
-  // TODO
-```
 
 ## Trees
 
@@ -250,16 +231,101 @@ Rotations are used to balance a binary search tree. There are four different typ
 
 **Left Rotation**
 
-The problem caused by inserting 40 can be fixed using a left rotation. This causes in-order traversal for the nodes to remain the same, and the depth of the tree is reduced by one level. A left rotation example is pictured below. 
+The problem caused by inserting 40 can be fixed using a left rotation. This causes in-order traversal for the nodes to remain the same, and the depth of the tree is reduced by one level. A generic left rotation example is pictured below. 
 
 <img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/AVL%20Left%20Rotation%20Concept.png" width="350" height="250">
 
+To perform a left rotation, the right child is selected as the pivot. This node will replace the rotated node as the root and move up a level. The node to be rotated becomes the left child of the pivot and moves down a level (so the current left child of the pivot has to move somewhere else). The pivot's left child can is set to the rotated node. Update the heights of the rotated node and the pivot. The last step is to return the pivot so that it can replace the rotated node in the tree. 
+
+avl left rotation example
+<img src="" width="350" height="250">
+
+**Right Rotation**
+
+A right rotation is the symmetrical opposite of left rotation. When left children are causing an imbalance, complete a right rotation. A generic right rotation example is pictured below. 
+
+avl right rotation generic
+<img src="" width="350" height="250">
+
+The steps for complete this rotation is identical to the left rotation, except the references to the left and right children are swapped. 
+
+**Right-left Rotation**
+
+Inserting 36 into the original tree will cause a problem. Doing a left rotation won't result in a balanced tree, so you need to perform a right rotation on the right child before doing the left rotation. Apply a right rotation to the 37 node so that 25, 36, and 37 are all right children. Then apply a left rotation. A right-left rotation example is pictured below. 
+
+right-left rotation example
+<img src="" width="350" height="250">
+
+**Left-right Rotation**
+
+A left-right rotation is also the symmetrically opposite of the right-left direction. A left-right rotation example is pictured below.
+
+left-right rotation example
+<img src="" width="350" height="250">
+
+**Balance**
+
+A balance factor of 2 means that the left child is heaver (contains more nodes) than the right child. This is where you use a right or left-right rotation. A balance factor of -2 means that the right is heavier than the left, so use a left or right-left rotation. 
 
 ### Tries
 
+A trie (pronounced try) is a tree that specializes in storing data that can be represented as a collection (such as english words). Each character in the string is mapped to a node. The last node is a terminating node. 
+
+trie example
+<img src="" width="350" height="250">
+
+This data structure has great performance characteristics for situations like finding words that have a matching prefix, since multiple words can share the same characters. Storing thousands of words in an array and searching through that array would be time consuming, so a trie is beneficial. Pictured below is an example of finding all the words that start with 'C' (cut' and 'cute').
+
+trie finding c words example
+<img src="" width="350" height="250">
+
+```swift
+  // TODO Implementation Section (Insert, Contains, Remove, Matching)
+```
+
 ### Binary Search
 
+Binary search is one of the most efficient searching algorithms with a time complexity of O(log n), which is the same as searching a balanced binary tree. Two conditions need to be met before a binary search can be used: The collection must be able to manipulate indices in constant time (conform to RandomAccessCollection in Swift), and the collection has to be sorted. 
+
+To use a binary search, first you have to find the middle index of the collection. Check that element, and compare it to the element you're trying to find. If it's the same, then you successfully found it. If value you're searching for is less than the middle value, recursively call the binary search again for the left subsequence. If it's greater, search the right subsequence. Each call basically removes half of the comparisons and you continue doing these steps until you find your answer or you can’t split up the collection, so it's very quick. A binary search for 31 is pictured below.
+
+Binary search example
+<img src="" width="350" height="250">
+
 ### Heaps
+
+A heap is a complete binary tree (binary heap) that can be constructed with an array. (Not to be confused with memory heaps). There are two types of heaps: Max heap, where the elements with a higher value have a higher priority, and a min heap, where lower value elements have a higher priority. And since a heap is a complete binary tree, every level must be filled with nodes except the last level. 
+
+Heap property
+<img src="" width="350" height="250">
+
+
+The heap property (or invariant) is important. In a max heap, parent nodes always contain nodes that are smaller values, where the root node is the highest value of the tree. A min heap is the opposite. 
+
+Heap levels
+<img src="" width="350" height="250">
+
+**Heap Applications**
+
+* Calculating min or max elements of a collection
+* Heap sort
+* Constructing a priority queue
+* Constructing graph algorithms (like Prim or Dijkstra) with a priority queue
+
+**Representing A Heap**
+
+Heaps can be represented with an array, unlike a regular tree. Iterate through each element level-by-levl from left to right. As you go to the next level, you’ll have twice as many nodes. The picture below would be the complete array using the previous picture of heap levels. 
+
+Creating heap array 
+<img src="" width="350" height="250">
+
+You can access the nodes by using simple equations. Given a node at a zero-based index i, the left child of the node can be found at index (2i + 1) and the right child index is at (2i + 2).
+
+Left off at page 171
+
+
+
+
 
 ### Priority Queues
 
