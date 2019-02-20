@@ -314,20 +314,91 @@ Heap levels
 
 **Representing A Heap**
 
-Heaps can be represented with an array, unlike a regular tree. Iterate through each element level-by-levl from left to right. As you go to the next level, you’ll have twice as many nodes. The picture below would be the complete array using the previous picture of heap levels. 
+Heaps can be represented with an array, unlike a regular tree. Iterate through each element level-by-level from left to right. As you go to the next level, you’ll have twice as many nodes. The picture below would be the complete array using the previous picture of heap levels. 
 
 Creating heap array 
 <img src="" width="350" height="250">
 
-You can access the nodes by using simple equations. Given a node at a zero-based index i, the left child of the node can be found at index (2i + 1) and the right child index is at (2i + 2).
+You can access the nodes by using simple equations. Given a node at a zero-based index i, the left child of the node can be found at index (2i + 1) and the right child index is at (2i + 2). To get the parent of a node, you can solve for i. Given a child node at index i, that child's parent node is at index ((i - 2) / 2).
 
-Left off at page 171
+**Removing Top Element**
 
+This removes the root node from the heap. In this max heap example, 10 will be removed. Swap the root node with the last element.
 
+heap remove 1
+<img src="" width="350" height="250">
 
+Remove the last element and save its value so you can place it back later, then check to see if it still follows the rule for a max heap (children nodes have to be smaller than the parent node). 
 
+heap remove 2
+<img src="" width="350" height="250">
+
+Since the heap doesn't follow that rule now, you have to perform a sift down. Start from the current value 3 and check its children. If 1 child has a value that's bigger, swap them. If both children are bigger, swap it with the biggest value. Keep doing this until both children have a smaller value. So for this example, the first sift will swap 3 and 8, and then 6 and 3. The final heap is pictured below
+
+heap remove 3
+<img src="" width="350" height="250">
+
+**Removing Any Element**
+
+To remove any element, check if the index is within the bounds of the array. If you want to remove the last element, just remove it. If you're not removing the last element, swap the element with the last element, return and remove the last element, then perform a sift down and sift up to adjust the heap. The following pictures show an example. 
+
+Heap Removing Any 1
+<img src="" width="350" height="250">
+
+heap removing any 2
+<img src="" width="350" height="250">
+
+**Inserting Elements**
+
+If you want to insert an element, add it to the end of the heap. For this example, we're going to add 7. 
+
+heap insert 1
+<img src="" width="350" height="250">
+
+To find the correct place for the new node, keep sifting up (swap them if the parent node is smaller) until the parent node is bigger. In this example, swap 7 to 4's place, then 7 to 6's place. 
+
+heap insert 2
+<img src="" width="350" height="250">
+
+**Searching Elements**
+
+You have to perform a search on the heap if you want the index of an element you want to delete. Heaps aren't designed for fast searches since it uses an array. The worst case operation is O(n) since it might have to check every single element. There are a few steps to searching a heap:
+* If the index is greater or equal to the number of elements, you can't search since it's out of bounds. Return nil or an error. 
+* Check if the element you're searching for has a higher priority than the current element at index i. If it does, the element can not be lower in the heap because that breaks the heap's rules. 
+* If the element is equal to the element at index i, return the index i. 
+* Recursively search for the element starting from the left child i, then right child i. The search failed if both of those fail to return an index. Return nil or an error. 
+
+**Operations and Time Complexities Summary**
+
+heap time complexities
+<img src="" width="350" height="250">
 
 ### Priority Queues
+
+A priority queue has elements where instead of first-in-first-out order, they come out in order by priority. One type of priority queue is max-priority, where the highest priority is the element at the front, and the other type is a min-priority, where the lowest priority is in the front. These can be useful if you need to find the minimum or maximum values.
+
+**Applications**
+* Dijkstra's algorithm - calculates the minimum cost
+* A* Pathfinding algorithm - tracks the unexplored routes that have the shortest length
+* Heap sort - can be created using a priority queue
+* Huffman coding - where a min-priority queue is used to repeatedly find two nodes with the smallest frequency that don't have a parent node
+
+**Operations**
+
+Priority queues have the same operations as a normal queue, but the implementations are a little different since they're based on priority.
+
+* Enqueue - Inserts an element
+* Dequeue - Removes the element with the highest priority
+* isEmpty - Checks if the queue is empty
+* Peek - Returns the element with the highest priority without removing it.
+
+**Creating Priority Queues**
+
+There are few different ways you can implement these types of queues.
+
+* Sorted array - Useful to get the max/min value of an element in O(1) time. Insertions are slow and require O(n) since you have to go through the array in order.
+* Balanced binary search tree - Useful for creating a double-ended priority queue to get the min/max value in O(log n) time. Insertion is also the same time. 
+* Heap - The natural choice for a priority queue. More efficient than a sorted array because it only needs to be partially sorted. All operations are O(log n) except getting the min/max values which is O(1).
 
 ## Sorting Algorithms
 
