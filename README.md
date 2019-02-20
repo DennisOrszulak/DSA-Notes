@@ -237,15 +237,13 @@ The problem caused by inserting 40 can be fixed using a left rotation. This caus
 
 To perform a left rotation, the right child is selected as the pivot. This node will replace the rotated node as the root and move up a level. The node to be rotated becomes the left child of the pivot and moves down a level (so the current left child of the pivot has to move somewhere else). The pivot's left child can is set to the rotated node. Update the heights of the rotated node and the pivot. The last step is to return the pivot so that it can replace the rotated node in the tree. 
 
-avl left rotation example
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/AVL/AVL%20Left%20Rotation%20Example.png" width="350" height="250">
 
 **Right Rotation**
 
 A right rotation is the symmetrical opposite of left rotation. When left children are causing an imbalance, complete a right rotation. A generic right rotation example is pictured below. 
 
-avl right rotation generic
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/AVL/AVL%20Right%20Rotation%20Generic.png" width="350" height="250">
 
 The steps for complete this rotation is identical to the left rotation, except the references to the left and right children are swapped. 
 
@@ -253,15 +251,13 @@ The steps for complete this rotation is identical to the left rotation, except t
 
 Inserting 36 into the original tree will cause a problem. Doing a left rotation won't result in a balanced tree, so you need to perform a right rotation on the right child before doing the left rotation. Apply a right rotation to the 37 node so that 25, 36, and 37 are all right children. Then apply a left rotation. A right-left rotation example is pictured below. 
 
-right-left rotation example
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/AVL/AVL%20Right-left%20Rotation%20Example.png" width="375" height="250">
 
 **Left-right Rotation**
 
 A left-right rotation is also the symmetrically opposite of the right-left direction. A left-right rotation example is pictured below.
 
-left-right rotation example
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/AVL/AVL%20Left-Right%20Rotation%20Example.png" width="375" height="250">
 
 **Balance**
 
@@ -271,13 +267,11 @@ A balance factor of 2 means that the left child is heaver (contains more nodes) 
 
 A trie (pronounced try) is a tree that specializes in storing data that can be represented as a collection (such as english words). Each character in the string is mapped to a node. The last node is a terminating node. 
 
-trie example
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Tries/Trie%20Example.png" width="350" height="250">
 
 This data structure has great performance characteristics for situations like finding words that have a matching prefix, since multiple words can share the same characters. Storing thousands of words in an array and searching through that array would be time consuming, so a trie is beneficial. Pictured below is an example of finding all the words that start with 'C' (cut' and 'cute').
 
-trie finding c words example
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Tries/Trie%20Finding%20C%20words.png" width="350" height="250">
 
 ```swift
   // TODO Implementation Section (Insert, Contains, Remove, Matching)
@@ -289,21 +283,17 @@ Binary search is one of the most efficient searching algorithms with a time comp
 
 To use a binary search, first you have to find the middle index of the collection. Check that element, and compare it to the element you're trying to find. If it's the same, then you successfully found it. If value you're searching for is less than the middle value, recursively call the binary search again for the left subsequence. If it's greater, search the right subsequence. Each call basically removes half of the comparisons and you continue doing these steps until you find your answer or you can’t split up the collection, so it's very quick. A binary search for 31 is pictured below.
 
-Binary search example
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Binary%20Search/Binary%20Search%20Example.png" width="450" height="200">
 
 ### Heaps
 
 A heap is a complete binary tree (binary heap) that can be constructed with an array. (Not to be confused with memory heaps). There are two types of heaps: Max heap, where the elements with a higher value have a higher priority, and a min heap, where lower value elements have a higher priority. And since a heap is a complete binary tree, every level must be filled with nodes except the last level. 
 
-Heap property
-<img src="" width="350" height="250">
-
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Heaps/Heap%20Property.png" width="400" height="250">
 
 The heap property (or invariant) is important. In a max heap, parent nodes always contain nodes that are smaller values, where the root node is the highest value of the tree. A min heap is the opposite. 
 
-Heap levels
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Heaps/Heap%20Levels.png" width="375" height="250">
 
 **Heap Applications**
 
@@ -316,8 +306,7 @@ Heap levels
 
 Heaps can be represented with an array, unlike a regular tree. Iterate through each element level-by-level from left to right. As you go to the next level, you’ll have twice as many nodes. The picture below would be the complete array using the previous picture of heap levels. 
 
-Creating heap array 
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Heaps/Creating%20Heap%20Array.png" width="500" height="200">
 
 You can access the nodes by using simple equations. Given a node at a zero-based index i, the left child of the node can be found at index (2i + 1) and the right child index is at (2i + 2). To get the parent of a node, you can solve for i. Given a child node at index i, that child's parent node is at index ((i - 2) / 2).
 
@@ -325,40 +314,33 @@ You can access the nodes by using simple equations. Given a node at a zero-based
 
 This removes the root node from the heap. In this max heap example, 10 will be removed. Swap the root node with the last element.
 
-heap remove 1
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Heaps/Heap%20Remove%201.png" width="475" height="250">
 
 Remove the last element and save its value so you can place it back later, then check to see if it still follows the rule for a max heap (children nodes have to be smaller than the parent node). 
 
-heap remove 2
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Heaps/Heap%20Remove%202.png" width="475" height="250">
 
 Since the heap doesn't follow that rule now, you have to perform a sift down. Start from the current value 3 and check its children. If 1 child has a value that's bigger, swap them. If both children are bigger, swap it with the biggest value. Keep doing this until both children have a smaller value. So for this example, the first sift will swap 3 and 8, and then 6 and 3. The final heap is pictured below
 
-heap remove 3
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Heaps/Heap%20Remove%203.png" width="350" height="250">
 
 **Removing Any Element**
 
 To remove any element, check if the index is within the bounds of the array. If you want to remove the last element, just remove it. If you're not removing the last element, swap the element with the last element, return and remove the last element, then perform a sift down and sift up to adjust the heap. The following pictures show an example. 
 
-Heap Removing Any 1
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Heaps/Heap%20Removing%20Any%201.png" width="425" height="250">
 
-heap removing any 2
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Heaps/Heap%20Removing%20Any%202.png" width="425" height="225">
 
 **Inserting Elements**
 
 If you want to insert an element, add it to the end of the heap. For this example, we're going to add 7. 
 
-heap insert 1
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Heaps/Heap%20Insert%201.png" width="325" height="250">
 
 To find the correct place for the new node, keep sifting up (swap them if the parent node is smaller) until the parent node is bigger. In this example, swap 7 to 4's place, then 7 to 6's place. 
 
-heap insert 2
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Heaps/Heap%20Insert%202.png" width="300" height="250">
 
 **Searching Elements**
 
@@ -370,8 +352,7 @@ You have to perform a search on the heap if you want the index of an element you
 
 **Operations and Time Complexities Summary**
 
-heap time complexities
-<img src="" width="350" height="250">
+<img src="https://github.com/DennisOrszulak/DSA-Notes/blob/master/DSA%20Notes%20Images/Heaps/Heap%20Time%20Complexities.png" width="350" height="250">
 
 ### Priority Queues
 
